@@ -1,0 +1,32 @@
+
+<html>
+
+	<body>
+		<canvas id="canvas"></canvas> 
+		<audio	id="audio"
+			controls
+			src="./song.wav">
+			Your browser does not support the nnnn
+		</audio>
+		<script type="text/javascript">
+			
+				var a = document.getElementById("audio");
+				a.addEventListener("timeupdate", fonct , true);
+				a.currentTime = 0;
+				var angle = 0 ; 
+			function fonct() { 
+				angle = a.currentTime * 2 * Math.PI * 0.037037037 ;
+				// console.log(a.currentTime); 
+				var canvas = document.getElementById('canvas');
+				var ctx = canvas.getContext('2d');
+
+				ctx.beginPath();
+				ctx.arc(75, 75, 50, 0, angle);
+				ctx.stroke();
+			}
+		</script>
+
+	</body>
+</html>
+
+
