@@ -1,0 +1,40 @@
+<html>
+	<body>
+	
+		<canvas  id="myCanvas" width =600 height=600 />
+
+		<script type="text/javascript">
+			let x = 12 ;
+			var intervalID = window.setInterval(dessiner, 100);
+			
+			function dessiner()
+			{
+				var i = 0 ;
+				i = 600 - (x *50) ;
+				var canvas = document.getElementById('myCanvas');
+				var ctx = canvas.getContext('2d');
+
+				
+				if (x > 0 ){
+					ctx.fillStyle = "red";
+					ctx.fillRect(i, 0,50, 50);
+					ctx.stroke();
+					ctx.clearRect(i-50, 0, 50, 50);	
+					console.log(x)		
+					
+				}else{
+					window.clearInterval(intervalID);
+					
+				}
+				x = --x;
+				;
+				
+
+		
+			} 
+			
+		</script>
+	</body>
+	
+</html>
+

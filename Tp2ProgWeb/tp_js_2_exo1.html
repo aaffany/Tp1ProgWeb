@@ -1,0 +1,44 @@
+
+<html>
+	<body >
+		<pre id = "jj">
+		
+		</pre>
+		<script >
+	
+			let i = 10 ;
+			var element = document.getElementById("jj");
+			element.innerHTML = i ;
+
+			var intervalID = window.setInterval(myCallback, 1500);
+
+			function myCallback()
+			{
+				i = -- i ;
+				
+				if (i >= 0 ){
+					element.innerHTML = i ;
+					
+				}else{
+					window.clearInterval(intervalID);
+					
+				}
+				
+				
+
+				
+			}
+
+			//window.clearInterval(intervalID);
+		</script>
+	
+	
+	
+ 		 
+
+ 		
+	</body>
+	
+
+</html>
+
