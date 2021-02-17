@@ -15,16 +15,16 @@
 
 		</canvas>
 
-		<script LANGUAGE="Javascript" SRC="point.js"></script>
+		<script LANGUAGE="Javascript" SRC="point2.js"></script>
 
 		<script type="text/javascript">
 			var x ;
 			var y ;
-			//var tab = [0 ,0] ;
+			var color ;
 
 			canvas = document.getElementById('myCanvas');
 			if (window.Worker) {
-				const myWorker = new Worker("worker.js");
+				const myWorker = new Worker("worker2.js");
 
 				myWorker.postMessage("hello");
 
@@ -32,9 +32,9 @@
 					const tab = JSON.parse(e.data) ; 
 					x = tab[0];
 					y = tab[1];
-					
+					color = tab[2];
 				
-					point = new Point(x,y,canvas);
+					point = new Point(x,y,canvas,color);
 					point.ache();
 					console.log('Message received from worker');
 				}
