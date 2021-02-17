@@ -1,0 +1,42 @@
+<html>
+
+
+
+	<body>
+		<pre id="contenu"></pre>
+
+		<script type="text/javascript">
+
+			function createXhrObject()
+			{
+			    if (window.XMLHttpRequest)
+			    	console.log("bib");
+			        return new XMLHttpRequest();
+
+			}
+
+
+			xhr = createXhrObject();
+			
+			xhr.open('GET','https://stwom.herokuapp.com/10',true);
+			console.log (xhr.readyState);
+			
+			xhr.send(null);
+			
+			console.log (xhr.responseText);
+
+			//if (xhr.readyState == 4)
+			//{
+				document.getElementById('contenu').innerHTML = xhr.responseText;
+				var js = document.getElementById('contenu').getElementsByTagName('script');
+				for( var i in js )
+				{
+					console.log(eval(js[i].text));
+				}
+			//}
+			
+		</script>
+
+	</body>
+	
+</html>
