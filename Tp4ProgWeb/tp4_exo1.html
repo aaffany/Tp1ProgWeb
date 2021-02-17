@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>workers</title>
+
+	<SCRIPT LANGUAGE="Javascript" SRC="point.js"></SCRIPT>
+
+	<script type="text/javascript">
+		var x ;
+		var y ;
+
+		canvas = document.getElementById('myCanvas');
+		if (window.Worker) {
+			const myWorker = new Worker("worker.js");
+
+			
+
+			myWorker.onmessage = function(e) {
+				x = e.data [0];
+				y = e.data [1]
+				console.log('Message received from worker');
+			}
+		} else {
+			console.log('Your browser doesn\'t support web workers.')
+		}
+
+
+
+
+
+	</script>
+</head>
+<body > 
+		<canvas id="myCanvas" width="200" height="200">
+
+
+
+			point = new Point(x,y,canvas);
+			point.ache();
+
+
+		</canvas>
+	</body>
+</html>
